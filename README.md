@@ -176,6 +176,8 @@ behave features/calculadora_ui.feature
 ```
 2 features passed, 0 failed, 0 skipped
 24 scenarios passed, 0 failed, 0 skipped
+126 steps passed, 0 failed, 0 skipped
+~ Took 0min 30.218s
 ```
 
 > 💡 **Dica:** Para rodar os testes sem abrir o Chrome visualmente (modo headless),
