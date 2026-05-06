@@ -45,3 +45,20 @@ def step_verificar_erro_divisao(context):
     assert 'zero' in context.erro.lower(), (
         f"Mensagem de erro inesperada: {context.erro}"
     )
+
+@when('tentar somar {a:g} e {b:g}')
+def step_tentar_somar_decimal(context, a, b):
+    """Delega a validação à própria classe Calculadora e captura o erro se for lançado."""
+    try:
+        context.resultado = context.calculadora.somar(a, b)
+        context.erro = None
+    except ValueError as e:
+        context.resultado = None
+        context.erro = str(e)
+
+@then('deve ocorrer um erro de soma com decimal')
+def step_verificar_erro_soma_decimal(context):
+    assert context.erro is not None, "Era esperado um erro de soma com decimal, mas nenhum erro ocorreu."
+    assert 'inteiros' in context.erro.lower(), (
+        f"Mensagem de erro inesperada: {context.erro}"
+    )

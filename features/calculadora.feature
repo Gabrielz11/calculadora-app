@@ -27,3 +27,8 @@ Feature: Operações Básicas da Calculadora
         Given que iniciei a calculadora
         When dividir 10 e 0
         Then deve ocorrer um erro de divisão por zero
+
+    Scenario: Somar com números decimais não é permitido
+        Given que iniciei a calculadora
+        When tentar somar 1.5 e 2.5
+        Then deve ocorrer um erro de soma com decimal
