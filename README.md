@@ -5,11 +5,11 @@
 </p>
 
 <p align="center">
-  [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-  [![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-  [![Behave](https://img.shields.io/badge/Behave-BDD-green?style=for-the-badge)](https://behave.readthedocs.io/)
-  [![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
-  [![License](https://img.shields.io/badge/Licença-MIT-blue?style=for-the-badge)](LICENSE)
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask"></a>
+  <a href="https://behave.readthedocs.io/"><img src="https://img.shields.io/badge/Behave-BDD-green?style=for-the-badge" alt="Behave"></a>
+  <a href="https://www.selenium.dev/"><img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenium"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/Licença-MIT-blue?style=for-the-badge" alt="License"></a>
 </p>
 
 ---
