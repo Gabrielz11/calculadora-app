@@ -1,18 +1,47 @@
 from behave import given, when, then
 from src.calculadora import Calculadora
 
+# ─── Given ───────────────────────────────────────────────────
+
 @given('que iniciei a calculadora')
 def step_iniciei_calculadora(context):
-    print("Calculadora iniciada")
     context.calculadora = Calculadora()
+    context.erro = None
 
-@when('soma {a:d} e {b:d}')
+# ─── When ────────────────────────────────────────────────────
+
+@when('soma {a:g} e {b:g}')
 def step_somar(context, a, b):
-    print(f"Soma: {a} + {b}")
     context.resultado = context.calculadora.somar(a, b)
 
-@then('o resultado deve ser {resultado:d}')
-def step_verificiar_resultado(context, resultado):
-    print(f"Resultado: {context.resultado}")
-    assert context.resultado == resultado
-    print(f"Esperado: {resultado}, Obtido: {context.resultado}")
+@when('subtrair {a:g} e {b:g}')
+def step_subtrair(context, a, b):
+    context.resultado = context.calculadora.subtrair(a, b)
+
+@when('multiplicar {a:g} e {b:g}')
+def step_multiplicar(context, a, b):
+    context.resultado = context.calculadora.multiplicar(a, b)
+
+@when('dividir {a:g} e {b:g}')
+def step_dividir(context, a, b):
+    try:
+        context.resultado = context.calculadora.dividir(a, b)
+        context.erro = None
+    except ValueError as e:
+        context.resultado = None
+        context.erro = str(e)
+
+# ─── Then ────────────────────────────────────────────────────
+
+@then('o resultado deve ser {esperado:g}')
+def step_verificar_resultado(context, esperado):
+    assert context.resultado == esperado, (
+        f"Esperado: {esperado}, Obtido: {context.resultado}"
+    )
+
+@then('deve ocorrer um erro de divisão por zero')
+def step_verificar_erro_divisao(context):
+    assert context.erro is not None, "Era esperado um erro de divisão por zero, mas nenhum erro ocorreu."
+    assert 'zero' in context.erro.lower(), (
+        f"Mensagem de erro inesperada: {context.erro}"
+    )

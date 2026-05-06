@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Calculadora Web — aplicação desenvolvida com Python, Flask e BDD para operações matemáticas básicas." />
+  <title>Calculadora App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="background">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <main class="container">
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">∑</span>
+      </div>
+      <h1 class="title">Calculadora App</h1>
+      <p class="subtitle">Operações matemáticas simples e precisas</p>
+    </header>
+
+    <section class="card" aria-label="Calculadora">
+      <div class="form-group">
+        <label for="numero1" class="label">Primeiro Número</label>
+        <input
+          type="number"
+          id="numero1"
+          class="input"
+          placeholder="Ex: 10"
+          step="any"
+          aria-label="Primeiro número"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="operacao" class="label">Operação</label>
+        <div class="select-wrapper">
+          <select id="operacao" class="select" aria-label="Selecione a operação">
+            <option value="soma">➕ Soma</option>
+            <option value="subtracao">➖ Subtração</option>
+            <option value="multiplicacao">✖ Multiplicação</option>
+            <option value="divisao">➗ Divisão</option>
+          </select>
+          <span class="select-arrow">▾</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="numero2" class="label">Segundo Número</label>
+        <input
+          type="number"
+          id="numero2"
+          class="input"
+          placeholder="Ex: 5"
+          step="any"
+          aria-label="Segundo número"
+        />
+      </div>
+
+      <button id="btn-calcular" class="btn-calcular" onclick="calcular()">
+        <span class="btn-text">Calcular</span>
+        <span class="btn-icon">→</span>
+      </button>
+
+      <div id="resultado-container" class="resultado-container hidden" role="alert" aria-live="polite">
+        <div id="resultado-label" class="resultado-label">Resultado</div>
+        <div id="resultado" class="resultado"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Desenvolvido com Python · Flask · BDD</p>
+    </footer>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
